@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boss-Recorder</title>
+<meta name="description" content="Boss-Recorder: privates Windows-Werkzeug, das gewonnene Bosskämpfe aufnimmt, Tode pro Boss zählt und Siege auf den eigenen YouTube-Kanal hochlädt.">
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f6f6f4; --surface: #ffffff; --border: rgba(11, 11, 11, 0.10);
+    --text: #0b0b0b; --text-2: #52514e; --muted: #6c6b66; --accent: #c8353a; --link: #1c5cab;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page: #0e1014; --surface: #171a20; --border: rgba(255, 255, 255, 0.09);
+      --text: #f0efec; --text-2: #c3c2b7; --muted: #8f8e88; --accent: #e5484d; --link: #6da7ec;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
+  header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  header svg { width: 52px; height: 52px; flex: none; }
+  h1 { font-size: 30px; margin: 0; line-height: 1.2; }
+  .lead { color: var(--text-2); font-size: 18px; margin: 4px 0 0; }
+  h2 { font-size: 19px; margin: 34px 0 8px; }
+  p, li { color: var(--text-2); }
+  ul { padding-left: 22px; }
+  li { margin: 4px 0; }
+  a { color: var(--link); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px 14px; margin-top: 24px; }
+  footer { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+  footer a { margin-right: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <rect x="2" y="2" width="60" height="60" rx="14" fill="#14161b" stroke="#3a3e4a" stroke-width="1.5"/>
+      <path d="M47 12l5 4-31.5 36.5-6.5 1.5 1.5-6z" fill="#e23a34"/>
+      <rect x="13" y="18" width="13" height="3" rx="1.5" fill="#ece8e0"/>
+      <rect x="13" y="24.5" width="10.5" height="3" rx="1.5" fill="#ece8e0"/>
+      <rect x="13" y="31" width="8" height="3" rx="1.5" fill="#ece8e0"/>
+      <circle cx="47" cy="44" r="4.5" fill="#e8b648"/>
+    </svg>
+    <div>
+      <h1>Boss-Recorder</h1>
+      <p class="lead">Gewonnene Bosskämpfe aufnehmen, Tode zählen, Siege auf YouTube.</p>
+    </div>
+  </header>
+
+  <p>Boss-Recorder ist ein privates Werkzeug für Windows. Es beobachtet das Spielbild, erkennt Bosskämpfe und schneidet nur die gewonnenen aus der laufenden Aufnahme von OBS Studio. Verlorene Versuche werden verworfen und nur gezählt: Pro Boss entsteht so eine Statistik mit Toden, Kampfzeit und dem knappsten Versuch.</p>
+
+  <div class="card">
+    <h2>So arbeitet das Programm</h2>
+    <ul>
+      <li>Es läuft ausschließlich auf dem eigenen PC. Es gibt keinen Server, kein Benutzerkonto beim Entwickler und keine Weitergabe von Daten.</li>
+      <li>Es greift nicht in Spiele ein, sondern liest nur das Bild und steuert OBS Studio über dessen lokale Schnittstelle.</li>
+      <li>Auf Wunsch lädt es gewonnene Kämpfe auf den eigenen YouTube-Kanal hoch.</li>
+    </ul>
+  </div>
+
+  <h2>Zugriff auf YouTube</h2>
+  <p>Für den Upload nutzt Boss-Recorder die YouTube API Services (YouTube Data API v3). Nach deiner Zustimmung im Google-Anmeldefenster lädt es Videos auf deinen Kanal hoch, legt eine Playlist pro Spiel an, fügt die Videos dort ein und fragt ab, ob YouTube ein Video fertig verarbeitet hat. Andere Videos, Kommentare oder Abos liest oder ändert es nicht.</p>
+  <p>Mit der Nutzung der YouTube-Funktionen stimmst du den <a href="https://www.youtube.com/t/terms">YouTube-Nutzungsbedingungen</a> zu. Für die Daten bei Google gilt die <a href="https://policies.google.com/privacy">Datenschutzerklärung von Google</a>. Den Zugriff kannst du jederzeit in den <a href="https://myaccount.google.com/permissions">Sicherheitseinstellungen deines Google-Kontos</a> widerrufen.</p>
+  <p>Wie das Programm mit diesen Daten umgeht, steht in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+
+  <footer>
+    <a href="datenschutz.html">Datenschutzerklärung</a>
+  </footer>
+</main>
+</body>
+</html>
